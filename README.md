@@ -92,10 +92,6 @@ Run packet similarity analysis on one capture:
 python Similarity.py 
   --pcap Capture01.pcap
 ```
-TO IMPLEMENT
-python Similarity.py 
-  --pcap Capture01.pcap 
-  --pcap Capture02.pcap
 
 This script is used to identify repeated packet structures, recurring communication patterns, and behavioural similarity between solar inverter traffic captures.
 
@@ -113,9 +109,8 @@ python Similarity.py
 
 python Shannon.py 
   --pcap Capture01.pcap
-
-The Sankey output provides a visual overview of device communication. The similarity script identifies recurring packet patterns. The entropy script provides a quantitative measure of packet variability.
 ```
+The Sankey output provides a visual overview of device communication. The similarity script identifies recurring packet patterns. The entropy script provides a quantitative measure of packet variability.
 
 ## Context
 
