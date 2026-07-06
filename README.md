@@ -1,4 +1,4 @@
-# SolarSense
+# Sunny Packets
 
 ## What Is Included
 
