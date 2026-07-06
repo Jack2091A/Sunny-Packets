@@ -1,6 +1,6 @@
 # Data 
 
-## Wbats included
+## Whats included
 
 ### Sungrow SH5k-20
 
