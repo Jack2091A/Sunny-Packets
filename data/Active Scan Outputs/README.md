@@ -3,9 +3,9 @@ For each inverter, the .txt file contains the output logs of NMAP TCP - full por
 Note that XXX.XXX.XXX.XXX is the IP address of the target device.
 
 The NMAP UDP command used is:
-sudo nmap -sU -p- 192.168.1.173 
+
 ```text
-nmap -p- -sV 192.168.1.173
+sudo nmap -sU -p- XXX.XXX.XXX.XXX
 ```
 The NMAP TCP command used is:
 ```text
