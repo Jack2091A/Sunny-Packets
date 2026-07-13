@@ -123,4 +123,39 @@ SolarSense's code repository supports the passive analysis component of a study 
 - Entropy and variability in network traffic
 - Potential indicators of plaintext, structured, or encrypted communication
 
-The tool is intended to help characterise how consumer DER devices communicate and how their network behaviour can be analysed for cybersecurity research.
+The tool is intended to help characterise how consumer DER devices communicate and how their network behaviour can be analysed for cybersecurity research. A simplified overview of the file organisation as been
+expressed below. Note that the pcap and txt files of the three other inverters have been reduced to improve readability.
+
+```text
+Sunny-Packets/
+├── README.md
+├── data/
+│   ├── Active Scan Outputs/
+│   │   ├── Fronius Gen24 5.0/
+│   │   │   ├── Fronius_LLM.txt
+│   │   │   ├── Fronius_NMAP_TCP.txt
+│   │   │   ├── Fronius_NMAP_UDP.txt
+│   │   │   ├── Fronius_LANSWEEPER.txt
+│   │   │   └── README.md
+│   │   ├── Goodwe 55000DST218W0590/
+│   │   ├── Sungrow SG5KTL-MT/
+│   │   └── Sungrow SH5K-20/
+│   │   ├── README.md
+│   ├── Passive Scan Outputs/
+│   │   ├── Fronius Gen24 5.0/
+│   │   │   ├── Fronius_60min_boot_active.pcap
+│   │   │   ├── Fronius_60min_run_active.pcap
+│   │   │   ├── Fronius_90min_run_active.pcap
+│   │   │   ├── Fronius_90min_active_stop.pcap
+│   │   │   └── README.md
+│   │   ├── Goodwe 55000DST218W0590/
+│   │   ├── README.md
+│   │   ├── Sungrow SG5KTL-MT/
+│   │   └── Sungrow SH20-5K/
+│   └── README.md
+├── requirements.txt
+└── src/
+    ├── SankeyMulti.py
+    ├── Shannon.py
+    └── similarity.py
+```
