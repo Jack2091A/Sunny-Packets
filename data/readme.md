@@ -17,7 +17,7 @@ eth.addr==
 ### Goodwe 55000DST218W0590
 To isolate the inverter's communications, please use the following filter:
 ```text
-eth.addr==
+eth.addr==34:ea:e7:a6:ab:12
 ```
 
 ### Fronius Gen 24 5.0
