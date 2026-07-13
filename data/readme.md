@@ -7,7 +7,7 @@ is approximately 20 minutes apart from the previous run. Filters have been provi
 - 60 minute capture from start to run
 - 60 minute capture during runtime
 - 90 minute capture during runtime
-- 90 minute capture from run to shutdown
+- 90 minute capture from run to shutdown (Inverter shuts down 3 minutes before capture ends)
 - Active Scan logs - Active.md
 
 ### Sungrow SH5k-20
