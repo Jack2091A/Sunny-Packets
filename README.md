@@ -139,8 +139,8 @@ Sunny-Packets/
 │   │   │   └── README.md
 │   │   ├── Goodwe 55000DST218W0590/
 │   │   ├── Sungrow SG5KTL-MT/
-│   │   └── Sungrow SH5K-20/
-│   │   ├── README.md
+│   │   ├── Sungrow SH5K-20/
+│   │   └── README.md
 │   ├── Passive Scan Outputs/
 │   │   ├── Fronius Gen24 5.0/
 │   │   │   ├── Fronius_60min_boot_active.pcap
@@ -149,9 +149,9 @@ Sunny-Packets/
 │   │   │   ├── Fronius_90min_active_stop.pcap
 │   │   │   └── README.md
 │   │   ├── Goodwe 55000DST218W0590/
-│   │   ├── README.md
 │   │   ├── Sungrow SG5KTL-MT/
-│   │   └── Sungrow SH20-5K/
+│   │   ├── Sungrow SH20-5K/
+│   │   └── README.md
 │   └── README.md
 ├── requirements.txt
 └── src/
