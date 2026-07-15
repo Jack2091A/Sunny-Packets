@@ -129,33 +129,24 @@ expressed below. Note that the pcap and txt files of the three other inverters h
 ```text
 Sunny-Packets/
 ├── README.md
-├── data/
-│   ├── Active Scan Outputs/
-│   │   ├── Fronius Gen24 5.0/
-│   │   │   ├── Fronius_LLM.txt
-│   │   │   ├── Fronius_NMAP_TCP.txt
-│   │   │   ├── Fronius_NMAP_UDP.txt
-│   │   │   ├── Fronius_LANSWEEPER.txt
-│   │   │   └── README.md
-│   │   ├── Goodwe 55000DST218W0590/
-│   │   ├── Sungrow SG5KTL-MT/
-│   │   ├── Sungrow SH5K-20/
-│   │   └── README.md
-│   ├── Passive Scan Outputs/
-│   │   ├── Fronius Gen24 5.0/
-│   │   │   ├── Fronius_60min_boot_active.pcap
-│   │   │   ├── Fronius_60min_run_active.pcap
-│   │   │   ├── Fronius_90min_run_active.pcap
-│   │   │   ├── Fronius_90min_active_stop.pcap
-│   │   │   └── README.md
-│   │   ├── Goodwe 55000DST218W0590/
-│   │   ├── Sungrow SG5KTL-MT/
-│   │   ├── Sungrow SH20-5K/
-│   │   └── README.md
-│   └── README.md
 ├── requirements.txt
+├── data/
+.       ├── Active Scan Outputs/
+.       .                      ├── Fronius Gen24 5.0/  ------------------------- ├── Fronius_LLM.txt
+.       .                      ├── Goodwe 55000DST218W0590/                      ├── Fronius_NMAP_TCP.txt
+.       .                      ├── Sungrow SG5KTL-MT/                            ├── Fronius_NMAP_UDP.txt
+.       .                      ├── Sungrow SH5K-20/                              ├── Fronius_LANSWEEPER.txt
+.       .                      └── README.md                                     └── README.md
+.       ├── Passive Scan Outputs/
+.       .                      ├── Fronius Gen24 5.0/  ------------------------- ├── Fronius_60min_boot_active.pcap
+.       .                      ├── Goodwe 55000DST218W0590/                      ├── Fronius_60min_run_active.pcap 
+.       .                      ├── Sungrow SG5KTL-MT/                            ├── Fronius_90min_run_active.pcap
+.       .                      ├── Sungrow SH20-5K/                              ├── Fronius_90min_active_stop.pcap
+.       .                      └── README.md                                     └── README.md
+.       └── README.md
 └── src/
-    ├── SankeyMulti.py
-    ├── Shannon.py
-    └── similarity.py
+       ├── SankeyMulti.py
+       ├── Shannon.py
+       ├── Exposure_Calculator.py
+       └── similarity.py
 ```
