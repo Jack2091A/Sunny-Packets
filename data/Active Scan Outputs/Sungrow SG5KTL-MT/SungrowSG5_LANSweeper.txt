@@ -1,0 +1,38 @@
+{
+  "_metadata": {
+    "deviceId": "56a173ab-f07b-4a18-80f2-aa0d8d88319c",
+    "exportedAt": "2026-07-23T09:00:32.2415990+00:00"
+  },
+  "ip": "192.168.1.235",
+  "mac": "60:C5:A8:71:2F:D4",
+  "hostname": "rakmodule_712FD4",
+  "tcpPorts": [
+    80
+  ],
+  "bonjour": {
+    "serviceInfos": [
+      {
+        "name": "_rak47x._tcp.local.",
+        "txt": [
+          "MAC=60:C5:A8:71:2F:D4",
+          "VER=1.9.0.10.12-2.13.4",
+          "TEST=Let's go"
+        ]
+      }
+    ]
+  },
+  "upnp": [],
+  "httpUserAgent": [],
+  "httpServer": [
+    {
+      "port": 80,
+      "ssl": false,
+      "wwwauth": [],
+      "cookie": [],
+      "x509Issuer": [],
+      "x509Subject": []
+    }
+  ],
+  "fqdn": "rakmodule_712FD4.lan",
+  "ssdp": []
+}
