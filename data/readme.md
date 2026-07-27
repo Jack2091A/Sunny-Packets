@@ -7,19 +7,19 @@ is approximately 20 minutes apart from the previous run. Filters have been provi
 - 60 minute capture from start to run
 - 60 minute capture during runtime
 - 90 minute capture during runtime
-- 90 minute capture from run to shutdown (Inverter shuts down 3 minutes before capture ends)
+- 90 minute capture from run to shutdown (Inverter shuts down 5 minutes before capture ends). All inverters tested stopped transmitting within 10 seconds of power shutoff.
 - Active Scan logs - Active.md
 
 ### Sungrow SH5k-20
 To isolate the inverter's communications, please use the following filter:
 ```text
-eth.addr==
+eth.addr==60:c5:a8:71:86:0c
 ```
 
 ### Sungrow SG5KTL-MT
 To isolate the inverter's communications, please use the following filter:
 ```text
-eth.addr==
+eth.addr==60:c5:a8:71:2f:d4
 ```
 
 ### Goodwe 55000DST218W0590
