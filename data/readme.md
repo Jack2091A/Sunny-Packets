@@ -21,7 +21,7 @@ To isolate the inverter's communications, please use the following filter:
 eth.addr==60:c5:a8:71:2f:d4
 ```
 
-#### Goodwe 55000DST218W0590
+#### Goodwe 55000DST218W0590 (DNS-5 series)
 To isolate the inverter's communications, please use the following filter:
 ```text
 eth.addr==34:ea:e7:a6:ab:12
