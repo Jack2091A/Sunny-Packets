@@ -2,6 +2,10 @@
 
 ## What Is Included
 
+This repository contains the data artifacts along with analysis scripts developed in order to carry out a cyber-risks assessment of commercial solar inverters
+
+The data was collected at UNSW Sydney by means of a custom testbed from which traffic traces of inverters could be captured.
+
 ```text
 SankeyMulti.py
 ```
@@ -21,6 +25,14 @@ Shannon.py
 Calculates Shannon entropy across packet-level features to measure uncertainty, structure, or randomness in network traffic.
 Example packet captures such as Capture01.pcap, if provided.
 Output files such as .pdf, .html, .csv, or .png, depending on the selected script options.
+
+```text
+data_sovereignty.py
+```
+
+```text
+exposure_lookup_grading_tool.py
+```
 
 ## Setup
 
@@ -94,6 +106,10 @@ python Similarity.py
 ```
 
 This script is used to identify repeated packet structures, recurring communication patterns, and behavioural similarity between solar inverter traffic captures.
+
+## Running data_sovereignty.py
+
+## Running exposure_lookup_grading_tool.py
 
 ## Example Workflow
 
