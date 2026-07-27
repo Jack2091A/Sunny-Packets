@@ -9,7 +9,7 @@ is approximately 20 minutes apart from the previous run. Filters have been provi
 - 90 minute capture during runtime
 - 90 minute capture from run to shutdown (Inverter shuts down 5 minutes before capture ends). All inverters tested stopped transmitting within 10 seconds of power shutoff.
 
-### Sungrow SH5k-20
+#### Sungrow SH5k-20
 To isolate the inverter's communications, please use the following filter:
 ```text
 eth.addr==60:c5:a8:71:86:0c
