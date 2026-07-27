@@ -50,17 +50,14 @@ sudo nmap -p- -sV XXX.XXX.XXX.XXX
 ```
 
 ### LLM Scanner
-An LLM tool was then used to enhance the efficacy of the scans by piping the scan outputs into an OpenAI API.
-For additional information see https://github.com/damianStrojek/LLM-Network-Scanner.
+An LLM tool was then used to enhance the efficacy of the scans by piping the scan outputs into an OpenAI API. The tool used, along with documentation is found here: https://github.com/damianStrojek/LLM-Network-Scanner.
 
 ### Angry IP Scanner
-A separate windows based Network Scanned called Angry IP Scanner was separately used to pry for additional insights.
-See: https://angryip.org/.
+A separate windows based Network Scanned called Angry IP Scanner was separately used to pry for additional insights. For additional details, see: https://angryip.org/.
 
 ### LANSweeper
 A commercial, paid network analysis tool known as LANSweeper was used as well. LANSweeper is not an open-source tool and is used in industry, hence its use provides additional
-practical value to the methodology in use.
-See: https://www.lansweeper.com/.
+practical value to the methodology in use. For additional details, see: https://www.lansweeper.com/.
 
 
 
