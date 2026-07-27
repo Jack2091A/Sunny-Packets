@@ -6,3 +6,5 @@ scapy
 scipy
 tqdm
 kaleido
+geoip2
+pycountry
