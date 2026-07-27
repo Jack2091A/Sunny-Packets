@@ -2,12 +2,16 @@
 
 ## Passive Scans
 
-Each inverter has undergone the same set of four tests. The rationale is to capture the behaviour of the devices during normal operation. Each run
-is approximately 20 minutes apart from the previous run. Filters have been provided to isolate the behaviour of the device in particular.
+Each inverter has undergone the same set of four tests with a total of 16 sets for the four studied inverters. 
 - 60 minute capture from start to run
 - 60 minute capture during runtime
 - 90 minute capture during runtime
-- 90 minute capture from run to shutdown (Inverter shuts down 5 minutes before capture ends). All inverters tested stopped transmitting within 10 seconds of power shutoff.
+- 90 minute capture from run to shutdown (Inverter shuts down 5 minutes before capture ends).
+
+The rationale is to capture the behaviour of the devices during normal operation. Each run
+is approximately 20 minutes apart from the previous run. Filters have been provided to isolate the behaviour of the device in particular.
+
+The captures are starting with their manufacturer. In the case of Sungrow, they are distinguished by their model names.
 
 #### Sungrow SH5k-20
 To isolate the inverter's communications, please use the following filter:
@@ -34,7 +38,7 @@ eth.addr==00:03:ac:37:65:4c
 ```
 ## Active Scans
 
-Each inverter was scanned with 4 different tools and they have been name and organised as such into .txt files which capture the various outputs of the scans.
+Each inverter was scanned with 4 different tools and they have been named and organised as such into .txt files which capture the various outputs of the scans.
 
 #### NMAP
 Devices were initially all scanned with the open source NMAP tool. A full port scan was completed using the following commands:
