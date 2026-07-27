@@ -1,0 +1,43 @@
+{
+  "_metadata": {
+    "deviceId": "2c3e30e5-9a8f-4946-b3ba-928c9d90210b",
+    "exportedAt": "2026-07-23T08:10:03.6143208+00:00"
+  },
+  "ip": "192.168.1.173",
+  "mac": "00:03:AC:37:65:4C",
+  "hostname": "UNSW",
+  "tcpPorts": [
+    80
+  ],
+  "bonjour": {
+    "name": "imx6sx-pilot",
+    "serviceInfos": [
+      {
+        "name": "_http._tcp.local.",
+        "txt": [
+          ""
+        ]
+      },
+      {
+        "name": "_Fronius-SE-Inverter._tcp.local.",
+        "txt": []
+      }
+    ]
+  },
+  "upnp": [],
+  "httpUserAgent": [],
+  "httpServer": [
+    {
+      "port": 80,
+      "ssl": false,
+      "server": "webserver",
+      "wwwauth": [],
+      "cookie": [],
+      "title": "Fronius Inverter",
+      "x509Issuer": [],
+      "x509Subject": []
+    }
+  ],
+  "fqdn": "UNSW.lan",
+  "ssdp": []
+}

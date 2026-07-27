@@ -1,0 +1,14 @@
+IP:	192.168.1.173
+Ping:	4 ms
+Hostname:	UNSW.lan
+Ports:	80
+MAC Address:	00:03:AC:37:65:4C
+TTL:	[n/a]
+Comments:	[n/a]
+Filtered Ports:	443,8080
+Web detect:	webserver
+HTTP Sender:	Thu, 23 Jul 2026 08:11:00 GMT
+NetBIOS Info:	[n/a]
+Packet Loss:	0/4 (0%)
+HTTP Proxy:	[n/a]
+MAC Vendor:	Fronius Schweissmaschinen
