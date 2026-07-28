@@ -35,7 +35,7 @@ Traffic involving public IP addresses is geolocated using the MaxMind GeoLite2 C
 
 
 ```text
-vulnerability_lookup_grading_tool.py
+vulnerability_lookup_grading.py
 ```
 
 Evaluates a manufacturer's historical cybersecurity exposure by querying the National Vulnerability Database (NVD), retrieving relevant Common Vulnerabilities and Exposures (CVEs), and calculating a percentage exposure score.
@@ -142,7 +142,7 @@ python data_sovereignty.py CaptureGood.pcap
 ```
 The script will save the findings into a csv file containing the ip addresses found, their location and the ports used in communication.
 
-## Running vulnerability_lookup_grading_tool.py
+## Running vulnerability_lookup_grading.py
 Initiate the run as using the following command line:
 
 ```text
