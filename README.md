@@ -125,12 +125,20 @@ This script is used to identify repeated packet structures, recurring communicat
 Run the script using the following command line structure:
 
 ```text
-python data_sovereignty.py CaptureGood.pcap   --mac MAC_ADDR  --target-country LOCATION  --geoip-db GeoLite2-Country.mmdb   --csv sovereignty_report.csv
+python data_sovereignty.py CaptureGood.pcap
+  --mac MAC_ADDR
+  --target-country LOCATION
+  --geoip-db GeoLite2-Country.mmdb
+  --csv sovereignty_report.csv
 ```
 For example, given an identified mac address and if the inverters are located in Australia, the command line should be:
 
 ```text
-python data_sovereignty.py CaptureGood.pcap   --mac 34:EA:E7:A6:AB:12   --target-country Australia   --geoip-db GeoLite2-Country.mmdb   --csv sovereignty_report.csv
+python data_sovereignty.py CaptureGood.pcap
+  --mac 34:EA:E7:A6:AB:12
+  --target-country Australia
+  --geoip-db GeoLite2-Country.mmdb
+  --csv sovereignty_report.csv
 ```
 The script will save the findings into a csv file containing the ip addresses found, their location and the ports used in communication.
 
@@ -140,7 +148,7 @@ Initiate the run as using the following command line:
 ```text
 python exposure_lookup_grading.py
 ```
-Afterwards, enter the name of the manufacturer in question. The script will fetch, generate and populate an .xlsx file. It will then prompt the user to fill in the applicability column.
+Afterwards, the script will prompt the user to enter the name of the manufacturer in question. The script will then fetch NVD records, generate and populate an .xlsx file. It will then prompt the user to fill in the applicability column and save afterwards.
 The weightings for this column can be found and modified in the grading_weights.yaml file.
 
 After this has been completed, press enter and the script will complete its run. Note that the .xlsx file is generated once only (unless it is deleted) and future runs will prompt the user to
