@@ -1,6 +1,6 @@
 # Sunny Packets
 
-This repository contains packet capture data along with various analysis scripts developed in order to carry out a cyber-risks assessment of commercial solar inverters
+This repository contains packet capture data (/data) along with various analysis scripts (/src) developed in order to carry out a cyber-risks assessment of commercial solar inverters
 
 The data was collected at UNSW Sydney by means of a custom testbed from which traffic traces of inverters could be captured.
 
@@ -53,7 +53,6 @@ Create and activate a Python virtual environment:
 For Linux Systems:
 
 ```text
-
 python3 -m venv .venv
 source .venv/bin/activate
 ```
