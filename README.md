@@ -73,7 +73,7 @@ python -m pip install -r requirements.txt
 If this does not work, install the items manually using:
 
 ```text
-python -m pip install scapy pandas numpy matplotlib plotly kaleido ...
+python -m pip install scapy pandas numpy matplotlib plotly kaleido geoip2 pycountry
 ```
 
 ## Running SankeyMulti.py
