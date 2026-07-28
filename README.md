@@ -173,6 +173,7 @@ SunnyPacket's code repository supports the passive analysis component of a study
 - Behavioural similarity between captures
 - Entropy and variability in network traffic
 - Potential indicators of plaintext, structured, or encrypted communication
+- Analysing and scoring data , port exposure and manufacturer vulnerability
 
 The tool is intended to help characterise how consumer DER devices communicate and how their network behaviour can be analysed for cybersecurity research. A simplified overview of the file organisation as been
 expressed below. Note that the pcap and txt files of the three other inverters have been reduced to improve readability.
@@ -186,15 +187,15 @@ Sunny-Packets/
 .       .                      ├── Fronius Gen24 5.0/  ------------------------- ├── Fronius_LLM.txt
 .       .                      ├── Goodwe 55000DST218W0590/                      ├── Fronius_NMAP_TCP.txt
 .       .                      ├── Sungrow SG5KTL-MT/                            ├── Fronius_NMAP_UDP.txt
-.       .                      ├── Sungrow SH5K-20/                              ├── Fronius_LANSWEEPER.txt
-.       .                      └── README.md                                     └── README.md
+.       .                      ├── Sungrow SH5K-20/                              └── Fronius_LANSWEEPER.txt
+.       .                      └── README.md                                     
 .       .
 .       ├── Passive Scan Outputs/
 .       .                      ├── Fronius Gen24 5.0/  ------------------------- ├── Fronius_60min_boot_active.pcap
 .       .                      ├── Goodwe 55000DST218W0590/                      ├── Fronius_60min_run_active.pcap 
 .       .                      ├── Sungrow SG5KTL-MT/                            ├── Fronius_90min_run_active.pcap
-.       .                      ├── Sungrow SH20-5K/                              ├── Fronius_90min_active_stop.pcap
-.       .                      └── README.md                                     └── README.md
+.       .                      ├── Sungrow SH20-5K/                              └── Fronius_90min_active_stop.pcap
+.       .                      └── README.md                                     
 .       .
 .       └── README.md
 └── src/
