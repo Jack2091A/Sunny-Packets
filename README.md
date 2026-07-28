@@ -39,7 +39,7 @@ vulnerability_lookup_grading.py
 ```
 
 Evaluates a manufacturer's historical cybersecurity exposure by querying the National Vulnerability Database (NVD), retrieving relevant Common Vulnerabilities and Exposures (CVEs), and calculating a percentage exposure score.
-The tool provides a repeatable assessment of vendor vulnerability history for use within the residential solar inverter cybersecurity assessment framework. Script contains modifiable .yaml file for weighting reassignment.
+Script contains modifiable .yaml file for weighting reassignment.
 
 ```text
 exposure_score.py
