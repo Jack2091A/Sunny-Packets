@@ -1,10 +1,10 @@
 # Sunny Packets
 
-## What Is Included
-
-This repository contains the data artifacts along with analysis scripts developed in order to carry out a cyber-risks assessment of commercial solar inverters
+This repository contains packet capture data along with various analysis scripts developed in order to carry out a cyber-risks assessment of commercial solar inverters
 
 The data was collected at UNSW Sydney by means of a custom testbed from which traffic traces of inverters could be captured.
+
+## What Is Included
 
 ```text
 SankeyMulti.py
@@ -30,9 +30,21 @@ Output files such as .pdf, .html, .csv, or .png, depending on the selected scrip
 data_sovereignty.py
 ```
 
+Script which inspects packet captures to determine whether a selected device communicates exclusively with infrastructure located within a nominated country.
+Traffic involving public IP addresses is geolocated using the MaxMind GeoLite2 Country database before being compared against the target location.
+
+
 ```text
-exposure_lookup_grading_tool.py
+vulnerability_lookup_grading_tool.py
 ```
+
+Evaluates a manufacturer's historical cybersecurity exposure by querying the National Vulnerability Database (NVD), retrieving relevant Common Vulnerabilities and Exposures (CVEs), and calculating a percentage exposure score.
+The tool provides a repeatable assessment of vendor vulnerability history for use within the residential solar inverter cybersecurity assessment framework. Script contains modifiable .yaml file for weighting reassignment.
+
+```text
+exposure_score.py
+```
+Script for the Network Exposure Score from standard Nmap TCP and UDP scan outputs. The tool parses Nmap text files, identifies exposed network services, calculates protocol-specific exposure scores, and reports the final score as a percentage.
 
 ## Setup
 
@@ -61,7 +73,7 @@ python -m pip install -r requirements.txt
 If this does not work, install the items manually using:
 
 ```text
-python -m pip install scapy pandas numpy matplotlib plotly kaleido
+python -m pip install scapy pandas numpy matplotlib plotly kaleido ...
 ```
 
 ## Running SankeyMulti.py
@@ -108,8 +120,35 @@ python Similarity.py
 This script is used to identify repeated packet structures, recurring communication patterns, and behavioural similarity between solar inverter traffic captures.
 
 ## Running data_sovereignty.py
+Run the script using the following command line structure:
 
-## Running exposure_lookup_grading_tool.py
+```text
+python data_sovereignty.py CaptureGood.pcap   --mac MAC_ADDR  --target-country LOCATION  --geoip-db GeoLite2-Country.mmdb   --csv sovereignty_report.csv
+```
+For example, given an identified mac address and if the inverters are located in Australia, the command line should be:
+
+```text
+python data_sovereignty.py CaptureGood.pcap   --mac 34:EA:E7:A6:AB:12   --target-country Australia   --geoip-db GeoLite2-Country.mmdb   --csv sovereignty_report.csv
+```
+
+## Running vulnerability_lookup_grading_tool.py
+Initiate the run as using the following command line:
+
+```text
+python exposure_lookup_grading.py
+```
+Afterwards, enter the name of the manufacturer in question. The script will fetch, generate and populate an .xlsx file. It will then prompt the user to fill in the applicability column.
+The weightings for this column can be found and modified in the grading_weights.yaml file.
+
+After this has been completed, press enter and the script will complete its run. Note that the .xlsx file is generated once only (unless it is deleted) and future runs will prompt the user to
+change the already generated file.
+
+## Running exposure_score.py
+Run the script on two .txt files containing the output of the NMAP scans completed;
+
+```text
+python nmap_exposure_score.py tcp_scan.txt udp_scan.txt
+···
 
 ## Example Workflow
 
@@ -130,7 +169,7 @@ The Sankey output provides a visual overview of device communication. The simila
 
 ## Context
 
-SolarSense's code repository supports the passive analysis component of a study into solar inverter and DER communications. It assists in identifying:
+SunnyPacket's code repository supports the passive analysis component of a study into solar inverter and DER communications. It assists in identifying:
 
 - Local and remote communication flows
 - Protocol and port usage
@@ -165,8 +204,9 @@ Sunny-Packets/
 └── src/
        ├── SankeyMulti.py
        ├── Shannon.py
-       ├── Exposure_Calculator.py
+       ├── vulnerability_lookup_grading.py
        ├── data_sovereignty.py
+       ├── exposure_score.py
        └── similarity.py
 
 ```
