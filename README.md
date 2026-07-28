@@ -110,6 +110,7 @@ Where X and Y are numbers indicative of the specific byte lengths of the packets
 from one another i.e. if there are two packets of length 153 back to back, Z = 2.
 
 ## Running Similarity.py
+
 Run packet similarity analysis on one capture:
 
 ```text
@@ -120,6 +121,7 @@ python Similarity.py
 This script is used to identify repeated packet structures, recurring communication patterns, and behavioural similarity between solar inverter traffic captures.
 
 ## Running data_sovereignty.py
+
 Run the script using the following command line structure:
 
 ```text
@@ -130,6 +132,7 @@ For example, given an identified mac address and if the inverters are located in
 ```text
 python data_sovereignty.py CaptureGood.pcap   --mac 34:EA:E7:A6:AB:12   --target-country Australia   --geoip-db GeoLite2-Country.mmdb   --csv sovereignty_report.csv
 ```
+The script will save the findings into a csv file containing the ip addresses found, their location and the ports used in communication.
 
 ## Running vulnerability_lookup_grading_tool.py
 Initiate the run as using the following command line:
@@ -144,28 +147,13 @@ After this has been completed, press enter and the script will complete its run.
 change the already generated file.
 
 ## Running exposure_score.py
+
 Run the script on two .txt files containing the output of the NMAP scans completed;
 
 ```text
 python nmap_exposure_score.py tcp_scan.txt udp_scan.txt
-···
-
-## Example Workflow
-
-A typical SolarSense workflow is as follows:
-
-```text
-python SankeyMulti.py 
-  --pcap Capture01.pcap 
-  --sankey-png output.pdf
-
-python Similarity.py 
-  --pcap Capture01.pcap
-
-python Shannon.py 
-  --pcap Capture01.pcap
 ```
-The Sankey output provides a visual overview of device communication. The similarity script identifies recurring packet patterns. The entropy script provides a quantitative measure of packet variability.
+The script will calculate and print a percentage score directly to the commandline.
 
 ## Context
 
