@@ -4,6 +4,39 @@ This repository contains packet capture data (/data) along with various analysis
 
 The data was collected at UNSW Sydney by means of a custom testbed from which traffic traces of inverters could be captured.
 
+The general structure of this github repository is expressed 
+
+```text
+Sunny-Packets/
+├── README.md
+├── requirements.txt
+├── data/
+.       ├── Active/
+.       .         ├── Fronius Gen24 5.0/  ------------------------- ├── Fronius_LLM.txt
+.       .         ├── Goodwe 55000DST218W0590/                      ├── Fronius_NMAP_TCP.txt
+.       .         ├── Sungrow SG5KTL-MT/                            ├── Fronius_NMAP_UDP.txt
+.       .         ├── Sungrow SH5K-20/                              ├── Fronius_LANSWEEPER.txt
+.       .         └── README.md                                     └── Fronius_ANGRYIP.txt                      
+.       .
+.       ├── Passive/
+.       .          ├── Fronius Gen24 5.0/  ------------------------ ├── Fronius_60min_boot_active.pcap
+.       .          ├── Goodwe 55000DST218W0590/                     ├── Fronius_60min_run_active.pcap 
+.       .          ├── Sungrow SG5KTL-MT/                           ├── Fronius_90min_run_active.pcap
+.       .          ├── Sungrow SH20-5K/                             └── Fronius_90min_active_stop.pcap
+.       .          └── README.md                                     
+.       .
+.       └── README.md
+└── src/
+       ├── SankeyMulti -------------------------------------------- ├── SankeyMulti.py
+       ├── Shannon                                                  └── README.md
+       ├── VulnerabilityLookupGrading
+       ├── DataSovereignty
+       ├── ExposureScore
+       └── Similarity
+
+```
+
+
 ## What Is Included
 
 ```text
@@ -27,7 +60,7 @@ Example packet captures such as Capture01.pcap, if provided.
 Output files such as .pdf, .html, .csv, or .png, depending on the selected script options.
 
 ```text
-data_sovereignty.py
+DataSovereignty.py
 ```
 
 Script which inspects packet captures to determine whether a selected device communicates exclusively with infrastructure located within a nominated country.
@@ -35,14 +68,14 @@ Traffic involving public IP addresses is geolocated using the MaxMind GeoLite2 C
 
 
 ```text
-vulnerability_lookup_grading.py
+VulnerabilityLookupGrading.py
 ```
 
 Evaluates a manufacturer's historical cybersecurity exposure by querying the National Vulnerability Database (NVD), retrieving relevant Common Vulnerabilities and Exposures (CVEs), and calculating a percentage exposure score.
 Script contains modifiable .yaml file for weighting reassignment.
 
 ```text
-exposure_score.py
+ExposureScore.py
 ```
 Script for the Network Exposure Score from standard Nmap TCP and UDP scan outputs. The tool parses Nmap text files, identifies exposed network services, calculates protocol-specific exposure scores, and reports the final score as a percentage.
 
@@ -108,18 +141,7 @@ python similarity.py capture01.pcap IP_destination IP_source --packet-lengths X 
 Where X and Y are numbers indicative of the specific byte lengths of the packets in question. Z is a numerical flag case to treat packets of identical lengths but separate instances as being separate 
 from one another i.e. if there are two packets of length 153 back to back, Z = 2.
 
-## Running Similarity.py
-
-Run packet similarity analysis on one capture:
-
-```text
-python Similarity.py 
-  --pcap Capture01.pcap
-```
-
-This script is used to identify repeated packet structures, recurring communication patterns, and behavioural similarity between solar inverter traffic captures.
-
-## Running data_sovereignty.py
+## Running DataSovereignty.py
 
 Run the script using the following command line structure:
 
@@ -141,7 +163,7 @@ python data_sovereignty.py CaptureGood.pcap
 ```
 The script will save the findings into a csv file containing the ip addresses found, their location and the ports used in communication.
 
-## Running vulnerability_lookup_grading.py
+## Running VulnerabilityLookupGrading.py
 Initiate the run as using the following command line:
 
 ```text
@@ -153,7 +175,7 @@ The weightings for this column can be found and modified in the grading_weights.
 After this has been completed, press enter and the script will complete its run. Note that the .xlsx file is generated once only (unless it is deleted) and future runs will prompt the user to
 change the already generated file.
 
-## Running exposure_score.py
+## Running ExposureScore.py
 
 Run the script on two .txt files containing the output of the NMAP scans completed;
 
@@ -174,35 +196,3 @@ SunnyPacket's code repository supports the passive analysis component of a study
 - Potential indicators of plaintext, structured, or encrypted communication
 - Analysing and scoring data , port exposure and manufacturer vulnerability
 
-The tool is intended to help characterise how consumer DER devices communicate and how their network behaviour can be analysed for cybersecurity research. A simplified overview of the file organisation as been
-expressed below. Note that the pcap and txt files of the three other inverters have been reduced to improve readability.
-
-```text
-Sunny-Packets/
-├── README.md
-├── requirements.txt
-├── data/
-.       ├── Active Scan Outputs/
-.       .                      ├── Fronius Gen24 5.0/  ------------------------- ├── Fronius_LLM.txt
-.       .                      ├── Goodwe 55000DST218W0590/                      ├── Fronius_NMAP_TCP.txt
-.       .                      ├── Sungrow SG5KTL-MT/                            ├── Fronius_NMAP_UDP.txt
-.       .                      ├── Sungrow SH5K-20/                              └── Fronius_LANSWEEPER.txt
-.       .                      └── README.md                                     
-.       .
-.       ├── Passive Scan Outputs/
-.       .                      ├── Fronius Gen24 5.0/  ------------------------- ├── Fronius_60min_boot_active.pcap
-.       .                      ├── Goodwe 55000DST218W0590/                      ├── Fronius_60min_run_active.pcap 
-.       .                      ├── Sungrow SG5KTL-MT/                            ├── Fronius_90min_run_active.pcap
-.       .                      ├── Sungrow SH20-5K/                              └── Fronius_90min_active_stop.pcap
-.       .                      └── README.md                                     
-.       .
-.       └── README.md
-└── src/
-       ├── SankeyMulti.py
-       ├── Shannon.py
-       ├── vulnerability_lookup_grading.py
-       ├── data_sovereignty.py
-       ├── exposure_score.py
-       └── similarity.py
-
-```
