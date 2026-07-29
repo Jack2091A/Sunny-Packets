@@ -4,7 +4,7 @@ This repository contains packet capture data (/data) along with various analysis
 
 The data was collected at UNSW Sydney by means of a custom testbed from which traffic traces of inverters could be captured.
 
-The general structure of this github repository is expressed 
+The general structure of this github repository is expressed indicatively as follows:
 
 ```text
 Sunny-Packets/
@@ -35,7 +35,19 @@ Sunny-Packets/
        └── Similarity
 
 ```
+Note that script (/src) folders may contain additional configuration files if required.
 
+## Context
+
+SunnyPacket's code repository supports the passive analysis component of a study into solar inverter and DER communications. It assists in identifying:
+
+- Local and remote communication flows
+- Protocol and port usage
+- Repeated packet structures
+- Behavioural similarity between captures
+- Entropy and variability in network traffic
+- Potential indicators of plaintext, structured, or encrypted communication
+- Analysing and scoring data , port exposure and manufacturer vulnerability
 
 ## What Is Included
 
@@ -134,7 +146,7 @@ python SankeyMulti.py \
 ## Running Similarity.py
 
 ```text
-python similarity.py capture01.pcap IP_destination IP_source --packet-lengths X Y --context-window Z --show-groups  
+python Similarity.py capture01.pcap IP_destination IP_source --packet-lengths X Y --context-window Z --show-groups  
  --list
 ```
 
@@ -146,7 +158,7 @@ from one another i.e. if there are two packets of length 153 back to back, Z = 2
 Run the script using the following command line structure:
 
 ```text
-python data_sovereignty.py CaptureGood.pcap
+python dataSovereignty.py CaptureGood.pcap
   --mac MAC_ADDR
   --target-country LOCATION
   --geoip-db GeoLite2-Country.mmdb
@@ -155,7 +167,7 @@ python data_sovereignty.py CaptureGood.pcap
 For example, given an identified mac address and if the inverters are located in Australia, the command line should be:
 
 ```text
-python data_sovereignty.py CaptureGood.pcap
+python DataSovereignty.py CaptureGood.pcap
   --mac 34:EA:E7:A6:AB:12
   --target-country Australia
   --geoip-db GeoLite2-Country.mmdb
@@ -167,7 +179,7 @@ The script will save the findings into a csv file containing the ip addresses fo
 Initiate the run as using the following command line:
 
 ```text
-python exposure_lookup_grading.py
+python ExposureLookupGrading.py
 ```
 Afterwards, the script will prompt the user to enter the name of the manufacturer in question. The script will then fetch NVD records, generate and populate an .xlsx file. It will then prompt the user to fill in the applicability column and save afterwards.
 The weightings for this column can be found and modified in the grading_weights.yaml file.
@@ -180,19 +192,8 @@ change the already generated file.
 Run the script on two .txt files containing the output of the NMAP scans completed;
 
 ```text
-python nmap_exposure_score.py tcp_scan.txt udp_scan.txt
+python ExposureScore.py tcp_scan.txt udp_scan.txt
 ```
 The script will calculate and print a percentage score directly to the commandline.
 
-## Context
-
-SunnyPacket's code repository supports the passive analysis component of a study into solar inverter and DER communications. It assists in identifying:
-
-- Local and remote communication flows
-- Protocol and port usage
-- Repeated packet structures
-- Behavioural similarity between captures
-- Entropy and variability in network traffic
-- Potential indicators of plaintext, structured, or encrypted communication
-- Analysing and scoring data , port exposure and manufacturer vulnerability
 
