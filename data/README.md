@@ -2,7 +2,7 @@
 
 ## Passive Scans
 
-Each inverter has undergone the same set of four tests with a total of 16 sets for the four studied inverters. 
+Each inverter has undergone the following selection of tests:
 - 60 minute capture from start to run
 - 60 minute capture during runtime
 - 90 minute capture during runtime
@@ -12,6 +12,9 @@ The rationale is to capture the behaviour of the devices during normal operation
 is approximately 20 minutes apart from the previous run. Filters have been provided to isolate the behaviour of the device in particular.
 
 The captures are starting with their manufacturer. In the case of Sungrow, they are distinguished by their model names.
+
+In some instances, the test was conducted twice. These pcaps end with the number 2. This was done to increase the volume of data using the standard
+selection of tests.
 
 #### Sungrow SH5k-20
 To isolate the inverter's communications, please use the following filter:
