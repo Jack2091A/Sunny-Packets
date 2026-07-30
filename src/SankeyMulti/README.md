@@ -9,20 +9,21 @@ there is also a merge functionality which improves clarity by merging all such p
 
 ## Usage
 
-Generate a Sankey diagram from a single packet capture:
+### Generate a Sankey diagram from a single packet capture
+
 ```text
 python SankeyMulti.py 
   --pcap Capture01.pcap 
   --sankey-png Output.pdf
 ```
-Generate a Sankey diagram from multiple packet captures:
+### Generate a Sankey diagram from multiple packet captures:
 ```text
 python SankeyMulti.py 
   --pcap Capture01.pcap 
   --pcap Capture02.pcap 
   --sankey-png CombinedOutput.pdf
 ```
-Example using MAC address labelling:
+### Generate a Sankey Diagram using MAC address labelling:
 ```text
 python SankeyMulti.py 
   --pcap Capture01.pcap 
@@ -30,7 +31,7 @@ python SankeyMulti.py
   --label "ac:19:9f:55:03:b4 Local Flow" 
   --sankey-png Finalflow.pdf
 ```
-Example using merge functionality:
+### Generate Sankey Diagram using merge functionality:
 ```text
 python SankeyMulti.py
   --pcap Sungrow5k.pcap
