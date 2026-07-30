@@ -5,10 +5,10 @@ ExposureScore is a simple python tool which utilises regex filtering to scrape t
 It then calculates a percentage score using the following metric:
 
 $$
-TCP Score=max\[0, 7.5 - 0.75\times(X)]
+TCP Score=max\[0, 7.5 - 0.75\timesX]
 $$
 $$
-UDP Score=max\[(0, 7.5 - 0.75\times(Y)]
+UDP Score=max\[(0, 7.5 - 0.75\timesY]
 $$
 
 $$where;$$
