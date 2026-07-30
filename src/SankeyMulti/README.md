@@ -5,7 +5,18 @@
 SankeyMulti is a python script designed to build Sankey diagrams out of pcap files. It is able to take multiple input pcap files and produce 
 combined Sankey diagrams in png and pdf format.
 The script takes in mac addresses of the target device. As ports can be assigned at random by devices initiating communications,
-there is also a merge functionality which improves clarity by merging all such ports into one endpoint on the Sankey diagram.
+
+### Features
+
+- Analyse one or more PCAP files simultaneously
+- Filter traffic by device MAC address
+- Automatically resolve destination IP addresses to DNS hostnames
+- Compare multiple devices on a single Sankey diagram
+- Optional merging of ephemeral source ports
+- Optional merging of destination service ports
+- Export publication-quality Sankey diagrams as PNG files
+
+---
 
 ## Usage
 
@@ -35,6 +46,22 @@ python SankeyMulti.py
   --sankey-png CombinedOutput.pdf
 ```
 ### Generate Sankey Diagram using merge functionality:
+
+When port merging is enabled, ephemeral client ports are grouped into a single node:
+
+```
+Device
+    ↓
+Device Port: *
+```
+
+Likewise, destination service ports may be grouped:
+
+```
+Endpoint Port: *
+```
+
+This greatly reduces the clutter for highly repetitive traffic with differing port numbers.
 ```text
 python SankeyMulti.py
   --pcap Sungrow5k.pcap
@@ -44,6 +71,22 @@ python SankeyMulti.py
   --merge-dst-ports 0
   --sankey-png MergedFlow.pdf
 ```
+
+### Command Line Options
+
+| Option | Description |
+|---------|-------------|
+| `--pcap` | PCAP file to analyse (repeatable). |
+| `--mac` | Target MAC address associated with each PCAP. |
+| `--label` | Optional label displayed on the Sankey diagram. |
+| `--merge-src-ports` | Merge ephemeral source ports for each device (0/1). |
+| `--merge-dst-ports` | Merge destination ports for each device (0/1). |
+| `--include-private` | Include private destination IP addresses. |
+| `--top` | Number of destination IPs printed in the console summary. |
+| `--sankey-png` | Output PNG filename. |
+| `--sankey-top` | Maximum number of links retained in each Sankey layer. |
+
+---
 
 ## Example Output
 Generated with command:
