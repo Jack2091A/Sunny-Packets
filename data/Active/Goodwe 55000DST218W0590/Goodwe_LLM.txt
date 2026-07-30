@@ -1,0 +1,93 @@
+(venv) jack-lin@jack-lin-HP-EliteDesk-800-G2-SFF:~/LLM-Network-Scanner$ python3 LLM-Network-Scanner.py
+
+[?] Please enter your OpenAI API key: [Withdrawn]
+```
+  _      _      _   _   _   _   _   _   _   _   _   _  
+ | |    | |    | | | | | | | | | | | | | | | | | | | | 
+ | |    | |    | | | | | | | | | | | | | | | | | | | | 
+ | |    | |    | | | | | | | | | | | | | | | | | | | | 
+ | |____| |____| |_| |_| |_| |_| |_| |_| |_| |_| |_| | 
+ |______|______|_____|_____|_____|_____|_____|_____|_____| 
+                                                        
+                LLMNS - Large Language Models Network Scanner
+                          Current Date: October 3, 2023
+                          Current Time: 14:45:32
+                     Geo-Localization: New York, USA
+```
+
+
+[?] Please enter host or hosts (text file) to be scanned: results.txt
+
+[DEBUG] ping -c 1 192.168.1.116 | grep '64 bytes' | awk '{print $4}' | tr -d ':'
+
+[*] Following hosts are up: 192.168.1.116
+
+###
+[*] Scanning host 192.168.1.116
+###
+
+[DEBUG] sudo nmap --top-ports 100 192.168.1.116 | grep -E 'open|filtered' | sed -E 's/[^0-9]*([0-9]+).*/\1/'
+
+[*] Discovered open ports: 80
+
+[DEBUG] sudo nmap -A -p 80 192.168.1.116 -oN ./files/nmap-aggresive-192.168.1.116.txt
+
+[*] Aggresive scan overview:
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-07-13 21:13 AEST
+Nmap scan report for HF-LPT230.lan (192.168.1.116)
+Host is up (0.0023s latency).
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    LimitlessLED smart lightbulb bridge httpd
+|_http-title: 401 Unauthorized
+|_http-server-header: HTTPD
+| http-auth: 
+| HTTP/1.0 401 Unauthorized\x0D
+|_  Basic realm=USER LOGIN
+MAC Address: 34:EA:E7:A6:AB:12 (Shanghai High-Flying Electronics  Technology)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: specialized|general purpose|bridge|webcam
+Running (JUST GUESSING): lwIP 2.X|1.4.X (99%), Oracle Virtualbox (93%), Advanced Illumination embedded (91%), Rigol Technologies embedded (91%), Gosund embedded (90%), Eve Systems embedded (90%)
+OS CPE: cpe:/a:lwip_project:lwip cpe:/a:lwip_project:lwip:2 cpe:/a:oracle:vm_virtualbox cpe:/h:advanced_illumination:dcs-100e cpe:/a:lwip_project:lwip:1.4.0
+Aggressive OS guesses: lwIP 1.4.1 - 2.0.3 (99%), lwIP 2.1.0 - 2.2.0 (93%), Oracle Virtualbox lwIP NAT bridge (93%), Advanced Illumination DCS-100E lighting controller (91%), Rigol DP832 DC power supply (91%), Rigol DS1074Z Plus oscilloscope (91%), Gosund EP2 smart plug (lwIP 1.4.1 - 2.0.3) (90%), lwIP 1.4.0 or earlier (90%), Rigol DSG3060 signal generator (90%), Eve Cam (lwIP 2.1.0 - 2.2.0) (90%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+Service Info: Device: specialized
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   2.31 ms HF-LPT230.lan (192.168.1.116)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 10.12 seconds
+
+
+[DEBUG] sudo curl -s -I http://192.168.1.116 | grep -i "WWW-Authenticate" && sudo hydra -l admin -P /path/to/passwords.txt 192.168.1.116 http-get / && sudo nikto -h http://192.168.1.116 -output nikto_report.txt
+
+[*] Specific commands that can be used to test host 192.168.1.116: 
+sudo curl -s -I http://192.168.1.116 | grep -i "WWW-Authenticate" && sudo hydra -l admin -P /path/to/passwords.txt 192.168.1.116 http-get / && sudo nikto -h http://192.168.1.116 -output nikto_report.txt
+
+[?] Do you want to generate image (yes/no)? no
+
+[*] Recommendations:
+
+80/tcp: Implement strong authentication mechanisms for the web interface of the LimitlessLED smart lightbulb bridge. The current setup shows a basic authentication prompt, which can be vulnerable to brute-force attacks. Consider using more secure authentication methods, such as OAuth or token-based authentication.
+
+80/tcp: Ensure that the web server is updated to the latest version to mitigate known vulnerabilities. Regularly check for firmware updates from the manufacturer and apply them promptly.
+
+80/tcp: Disable any unnecessary services on the device to reduce the attack surface. If the HTTP service is not required for regular operation, consider disabling it entirely.
+
+80/tcp: Implement network segmentation to isolate IoT devices like the smart lightbulb bridge from critical systems. This can help contain potential breaches and limit lateral movement within the network.
+
+80/tcp: Use a firewall to restrict access to the device from untrusted networks. Only allow access from specific IP addresses or ranges that require management access.
+
+80/tcp: Monitor logs and network traffic for any unusual activity related to the device. Set up alerts for unauthorized access attempts or other suspicious behavior.
+
+80/tcp: Consider using HTTPS instead of HTTP to encrypt communications between the device and users. This will help protect sensitive information from being intercepted during transmission.
+
+80/tcp: Regularly conduct vulnerability assessments and penetration testing on IoT devices to identify and remediate potential security weaknesses.
+
+[*] Report saved as ./files/Penetration-Testing-Report.pdf.
+
+[*] The application is terminating .
