@@ -1,8 +1,11 @@
 # Sunny Packets
 
-This repository contains packet capture data (/data) along with various analysis scripts (/src) developed in order to carry out a cyber-risks assessment of commercial solar inverters
+## Background
 
-The data was collected at UNSW Sydney by means of a custom testbed from which traffic traces of inverters could be captured.
+This repository contains packet capture data (/data) along with various analysis scripts (/src) developed in order to carry out a cyber-risks assessment of commercial solar inverters
+The data was collected at UNSW Sydney by means of a custom testbed from which traffic traces of inverters could be captured. 
+
+## Repository Organisation
 
 The general structure of this github repository is expressed indicatively as follows:
 
@@ -35,20 +38,22 @@ Sunny-Packets/
        └── Similarity
 
 ```
+## What Is Included
+Overarhing information and documentation can be found in the respective directories of this repository. The below is a summary:
 
-| Directory        | Contents                      | Purpose                                                                   |
-| ---------------- | ----------------------------- | ------------------------------------------------------------------------- |
-| `data/`          | Root data directory           | Stores all datasets used by the project.                                  |
-| `data/Active/`   | Active reconnaissance results | Contains outputs from active network enumeration tools for each inverter. |
-| `data/Passive/`  | Passive packet captures       | Contains PCAP captures collected during normal inverter operation.        |
-| `data/README.md` | Documentation                 | Describes the structure and contents of the data directory.               |
-| `src/`          | Root script directory          | Stores all datasets used by the project.                                  |
-| `SankeyMulti/`                | Generates Sankey diagrams showing packet flow between endpoints, protocols and ports. |
-| `Shannon/`                    | Calculates Shannon entropy for packet payload analysis.                               |
-| `VulnerabilityLookupGrading/` | Queries vulnerability databases and calculates vendor vulnerability scores.           |
-| `DataSovereignty/`            | Determines communication destinations and assesses data sovereignty.                  |
-| `ExposureScore/`              | Computes network exposure scores from discovered services and ports.                  |
-| `Similarity/`                 | Compares packet structures and identifies repeated communication patterns.            |
+| Directory        | Purpose                                                                   |
+| ---------------- | ------------------------------------------------------------------------- |
+| `data/`          | Root Data Directory, Stores all datasets collected by the thesis.         |
+| `data/Active/`   | Contains outputs from active network scanning tools for each inverter.    |
+| `data/Passive/`  | Contains PCAP captures collected during normal inverter operation.        |
+| `data/README.md` | Describes the structure and contents of the data directory.               |
+| `src/`           | Stores all datasets used by the project.                                  |
+| `SankeyMulti/`                | Script and Documentation. Generates Sankey diagrams showing packet flow between endpoints, protocols and ports.                    |
+| `Shannon/`                    | Script and Documentation. Calculates Shannon entropy for packet payload analysis.                                                  |
+| `VulnerabilityLookupGrading/` | Script, .yaml config file and Documentation. Queries vulnerability databases and calculates vendor vulnerability scores.           |
+| `DataSovereignty/`            | Script, Data File (.mmdb) and Documentation. Determines communication destinations and assesses data sovereignty.                  |
+| `ExposureScore/`              | Script and Documentation. Computes network exposure scores from discovered services and ports.                                     |
+| `Similarity/`                 | Script and Documentation. Compares packet structures and identifies repeated communication patterns.                               |
 
 
 ## Context
@@ -63,49 +68,6 @@ SunnyPacket's code repository supports the passive analysis component of a study
 - Potential indicators of plaintext, structured, or encrypted communication
 - Analysing and scoring data , port exposure and manufacturer vulnerability
 
-## What Is Included
-
-Additional information regarding each can be found in their respective README files located in the `/src` directory.
-
-```text
-SankeyMulti.py
-```
-
-Generates Sankey diagrams from one or more PCAP files to visualise traffic flows between devices, IP addresses, ports, and protocols.
-
-```text
-Similarity.py
-```
-
-Compares packet captures and identifies similarity between observed traffic patterns. 
-
-```text
-Shannon.py
-```
-
-Calculates Shannon entropy across packet-level features to measure uncertainty, structure, or randomness in network traffic.
-Example packet captures such as Capture01.pcap, if provided.
-Output files such as .pdf, .html, .csv, or .png, depending on the selected script options.
-
-```text
-DataSovereignty.py
-```
-
-Script which inspects packet captures to determine whether a selected device communicates exclusively with infrastructure located within a nominated country.
-Traffic involving public IP addresses is geolocated using the MaxMind GeoLite2 Country database before being compared against the target location.
-
-
-```text
-VulnerabilityLookupGrading.py
-```
-
-Evaluates a manufacturer's historical cybersecurity exposure by querying the National Vulnerability Database (NVD), retrieving relevant Common Vulnerabilities and Exposures (CVEs), and calculating a percentage exposure score.
-Script contains modifiable .yaml file for weighting reassignment.
-
-```text
-ExposureScore.py
-```
-Script for the Network Exposure Score from standard Nmap TCP and UDP scan outputs. The tool parses Nmap text files, identifies exposed network services, calculates protocol-specific exposure scores, and reports the final score as a percentage.
 
 ## Setup
 
