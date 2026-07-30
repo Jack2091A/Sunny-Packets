@@ -41,3 +41,22 @@ python SankeyMulti.py
   --merge-dst-ports 0
   --sankey-png MergedFlow.pdf
 ```
+
+## Example Output
+Generated with command:
+
+```bash
+python SankeyMulti.py
+  --pcap Capture27A.pcap
+  --pcap Capture17.pcap
+  --mac ac:19:9f:55:03:b4
+  --mac 60:c5:a8:71:86:0c
+  --label "ac:19:9f:55:03:b4"
+  --label "60:c5:a8:71:86:0c"
+  --merge-src-ports 0 1
+  --merge-dst-ports 1 0
+  --sankey-png combined.pdf
+```
+
+<img width="1182" height="504" alt="image" src="https://github.com/user-attachments/assets/d87034c5-e87d-42ca-a746-1c123082bc70" />
+
