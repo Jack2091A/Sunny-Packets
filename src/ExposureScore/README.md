@@ -13,9 +13,9 @@ $$
 
 $$where;$$
 
-$$ X = number\ of exposed TCP ports $$
+$$ X\ =\ number\ of\ exposed\ TCP\ ports $$
 
-$$ Y = number of exposed UDP ports $$
+$$ Y\ =\ number\ of\ exposed\ UDP\ ports $$
 
 
 ## Usage
