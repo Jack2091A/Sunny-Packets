@@ -5,11 +5,14 @@ ExposureScore is a simple python tool which utilises regex filtering to scrape t
 It then calculates a percentage score using the following metric:
 
 $$
-TCP Score=max\[0, 7.5 - 0.75\times(numberTCPportsExposed)]
+TCP_Score=max\[0, 7.5 - 0.75\times(X)]
 $$
 $$
-UDP Score=max\[(0, 7.5 - 0.75\times(numberUDPportsExposed)]
+UDP_Score=max\[(0, 7.5 - 0.75\times(Y)]
 $$
+$$where$$
+$$ X = number of exposed TCP ports $$
+$$ Y = number of exposed UDP ports $$
 
 
 ## Usage
