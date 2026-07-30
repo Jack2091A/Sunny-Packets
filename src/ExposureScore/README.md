@@ -8,7 +8,7 @@ $$
 TCP Score=max\[0, 7.5 - 0.75\times(numberTCPportsExposed)]
 $$
 $$
-UDP Score=max\[(0, 7.5 - 0.75\times(numberUDPportsExposed​)]
+UDP Score=max\[(0, 7.5 - 0.75\times(numberUDPportsExposed)]
 $$
 
 
