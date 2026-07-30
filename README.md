@@ -13,6 +13,7 @@ The general structure of this github repository is expressed indicatively as fol
 Sunny-Packets/
 ├── README.md
 ├── requirements.txt
+├── LICENSE.md
 ├── data/
 .       ├── Active/
 .       .         ├── Fronius Gen24 5.0/  ------------------------- ├── Fronius_LLM.txt
@@ -39,7 +40,7 @@ Sunny-Packets/
 
 ```
 ## What Is Included
-Overarhing information and documentation can be found in the respective directories of this repository. The below is a summary:
+Detailed information and documentation can be found in the respective directories of this repository. The below is a summary of the key elements:
 
 | Directory        | Purpose                                                                   |
 | ---------------- | ------------------------------------------------------------------------- |
