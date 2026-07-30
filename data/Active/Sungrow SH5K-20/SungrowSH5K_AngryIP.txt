@@ -1,0 +1,14 @@
+IP:	192.168.1.248
+Ping:	4 ms
+Hostname:	rakmodule_71860C.lan
+Ports:	80
+MAC Address:	60:C5:A8:71:86:0C
+TTL:	[n/a]
+Comments:	[n/a]
+Filtered Ports:	443,8080
+Web detect:	rak_mini_server
+HTTP Sender:	[n/a]
+NetBIOS Info:	[n/a]
+Packet Loss:	0/4 (0%)
+HTTP Proxy:	[n/a]
+MAC Vendor:	Beijing LT Honway
