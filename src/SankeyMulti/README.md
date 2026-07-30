@@ -13,23 +13,26 @@ there is also a merge functionality which improves clarity by merging all such p
 
 ```text
 python SankeyMulti.py 
-  --pcap Capture01.pcap 
+  --pcap CaptureA.pcap 
   --sankey-png Output.pdf
+```
+
+### Generate a Sankey Diagram using MAC address labelling:
+```text
+python SankeyMulti.py 
+  --pcap CaptureA.pcap 
+  --mac ac:19:9f:55:03:b4 
+  --label "ac:19:9f:55:03:b4 Local Flow" 
+  --sankey-png Finalflow.pdf
 ```
 ### Generate a Sankey diagram from multiple packet captures:
 ```text
 python SankeyMulti.py 
-  --pcap Capture01.pcap 
-  --pcap Capture02.pcap 
+  --pcap CaptureA.pcap 
+  --pcap CaptureB.pcap
+  --mac ac:19:9f:55:03:b4
+  --mac 60:c5:a8:71:86:0c
   --sankey-png CombinedOutput.pdf
-```
-### Generate a Sankey Diagram using MAC address labelling:
-```text
-python SankeyMulti.py 
-  --pcap Capture01.pcap 
-  --mac ac:19:9f:55:03:b4 
-  --label "ac:19:9f:55:03:b4 Local Flow" 
-  --sankey-png Finalflow.pdf
 ```
 ### Generate Sankey Diagram using merge functionality:
 ```text
