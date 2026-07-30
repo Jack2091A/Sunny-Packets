@@ -1,0 +1,64 @@
+(venv) jack-lin@jack-lin-HP-EliteDesk-800-G2-SFF:~/LLM-Network-Scanner$ sudo nmap -p- -sV 192.168.1.248
+[sudo: authenticate] Password: 
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-07-17 20:01 AEST
+Nmap scan report for rakmodule_71860C.lan (192.168.1.248)
+Host is up (0.012s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT    STATE SERVICE VERSION
+80/tcp  open  http    rak_mini_server
+502/tcp open  mbap?
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.95%I=7%D=7/17%Time=6A59FD87%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,138,"HTTP/1\.1\x20401\x20Unauthorized\r\nServer:\x20rak_mini_ser
+SF:ver\r\nWWW-Authenticate:\x20Basic\x20realm=\"RAK\x20LOGIN\"\r\nContent-
+SF:Length:\x20145\r\nContent-Type:\x20text/html\r\nConnection:\x20keep-ali
+SF:ve\r\n\r\n<HTML><HEAD><TITLE>401\x20Unauthorized</TITLE></HEAD>\r\n<BOD
+SF:Y\x20BGCOLOR=\"#cc9999\"><H4>401\x20Unauthorized</H4>\r\nAuthorization\
+SF:x20required\.\r\n</BODY></HTML>\r\n\0")%r(HTTPOptions,138,"HTTP/1\.1\x2
+SF:0401\x20Unauthorized\r\nServer:\x20rak_mini_server\r\nWWW-Authenticate:
+SF:\x20Basic\x20realm=\"RAK\x20LOGIN\"\r\nContent-Length:\x20145\r\nConten
+SF:t-Type:\x20text/html\r\nConnection:\x20keep-alive\r\n\r\n<HTML><HEAD><T
+SF:ITLE>401\x20Unauthorized</TITLE></HEAD>\r\n<BODY\x20BGCOLOR=\"#cc9999\"
+SF:><H4>401\x20Unauthorized</H4>\r\nAuthorization\x20required\.\r\n</BODY>
+SF:</HTML>\r\n\0")%r(RTSPRequest,138,"HTTP/1\.1\x20401\x20Unauthorized\r\n
+SF:Server:\x20rak_mini_server\r\nWWW-Authenticate:\x20Basic\x20realm=\"RAK
+SF:\x20LOGIN\"\r\nContent-Length:\x20145\r\nContent-Type:\x20text/html\r\n
+SF:Connection:\x20keep-alive\r\n\r\n<HTML><HEAD><TITLE>401\x20Unauthorized
+SF:</TITLE></HEAD>\r\n<BODY\x20BGCOLOR=\"#cc9999\"><H4>401\x20Unauthorized
+SF:</H4>\r\nAuthorization\x20required\.\r\n</BODY></HTML>\r\n\0")%r(FourOh
+SF:FourRequest,138,"HTTP/1\.1\x20401\x20Unauthorized\r\nServer:\x20rak_min
+SF:i_server\r\nWWW-Authenticate:\x20Basic\x20realm=\"RAK\x20LOGIN\"\r\nCon
+SF:tent-Length:\x20145\r\nContent-Type:\x20text/html\r\nConnection:\x20kee
+SF:p-alive\r\n\r\n<HTML><HEAD><TITLE>401\x20Unauthorized</TITLE></HEAD>\r\
+SF:n<BODY\x20BGCOLOR=\"#cc9999\"><H4>401\x20Unauthorized</H4>\r\nAuthoriza
+SF:tion\x20required\.\r\n</BODY></HTML>\r\n\0")%r(GenericLines,148,"HTTP/1
+SF:\.1\x20400\x20Bad\x20Request\r\nServer:\x20rak_mini_server\r\nAccept-Ra
+SF:nges:\x20bytes\r\nContent-Type:\x20text/html\r\nContent-Length:\x20188\
+SF:r\nConnection:\x20close\r\n\r\n<html><head><title>400\x20Bad\x20Request
+SF:</title></head><body>\r\n<h1>Bad\x20Request</h1>\r\nYou\x20sent\x20a\x2
+SF:0request\x20that\x20the\x20server\x20couldn't\x20understand\.\r\n<hr>\r
+SF:\nGenerated\x20by\x20rak_mini_server\r\n</body></html>\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port502-TCP:V=7.95%I=7%D=7/17%Time=6A59FD88%P=x86_64-pc-linux-gnu%r(Gen
+SF:ericLines,9,"\r\n\r\nGMT\xb1\x04")%r(GetRequest,9,"GET\x20/\x20H\xd4\x0
+SF:4")%r(HTTPOptions,9,"OPTIONS\xa0\x04")%r(RTSPRequest,9,"OPTIONS\xa0\x04
+SF:")%r(RPCCheck,9,"\x80\0\0\(r\xfe\x1d\x93\x04")%r(DNSVersionBindReqTCP,9
+SF:,"\0\x1e\0\x06\x01\0\0\x81\x04")%r(DNSStatusRequestTCP,9,"\0\x0c\0\0\x1
+SF:0\0\0\x80\x04")%r(Help,9,"HELP\r\n\0\x80\x04")%r(SSLSessionReq,9,"\x16\
+SF:x03\0\0S\x01\0\x80\x04")%r(TerminalServerCookie,9,"\x03\0\0\*%\xe0\0\x8
+SF:0\x04")%r(TLSSessionReq,9,"\x16\x03\0\0i\x01\0\x80\x04")%r(Kerberos,9,"
+SF:\0\0\0qj\x81n\xb0\x04")%r(SMBProgNeg,2,"\xc0\0")%r(X11Probe,9,"l\0\x0b\
+SF:0\0\0\0\x80\x04")%r(FourOhFourRequest,9,"GET\x20/ni\xe3\x04")%r(LDAPSea
+SF:rchReq,9,"0\x84\0\0\0-\x02\x81\x04")%r(LDAPBindReq,9,"0\x0c\x02\x01\x01
+SF:`\x07\x82\x04")%r(SIPOptions,9,"OPTIONS\xa0\x04")%r(LANDesk-RC,9,"TNMP\
+SF:x04\0\0\x80\x04")%r(TerminalServer,9,"\x03\0\0\x0b\x06\xe0\0\x80\x04")%
+SF:r(NCP,9,"DmdT\0\0\0\x97\x04")%r(NotesRPC,9,":\0\0\0/\0\0\x80\x04")%r(Ja
+SF:vaRMI,9,"JRMI\0\x02K\x80\x04")%r(oracle-tns,9,"\0Z\0\0\x01\0\0\x80\x04"
+SF:)%r(ms-sql-s,9,"\x12\x01\x004\0\0\0\x80\x04")%r(afp,9,"\0\x03\0\x01\0\0
+SF:\0\x80\x04")%r(giop,9,"GIOP\x01\0\x01\x80\x04");
+MAC Address: 60:C5:A8:71:86:0C (Beijing LT Honway Technology)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 202.73 seconds
+

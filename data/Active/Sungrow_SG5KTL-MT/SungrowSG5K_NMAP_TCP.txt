@@ -1,0 +1,43 @@
+(venv) jack-lin@jack-lin-HP-EliteDesk-800-G2-SFF:~/LLM-Network-Scanner$ sudo nmap -p- -sV 192.168.1.235
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-07-16 21:29 AEST
+Nmap scan report for rakmodule_712FD4.lan (192.168.1.235)
+Host is up (0.022s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT    STATE SERVICE VERSION
+80/tcp  open  http    rak_mini_server
+502/tcp open  mbap?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.95%I=7%D=7/16%Time=6A58C0A9%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,138,"HTTP/1\.1\x20401\x20Unauthorized\r\nServer:\x20rak_mini_ser
+SF:ver\r\nWWW-Authenticate:\x20Basic\x20realm=\"RAK\x20LOGIN\"\r\nContent-
+SF:Length:\x20145\r\nContent-Type:\x20text/html\r\nConnection:\x20keep-ali
+SF:ve\r\n\r\n<HTML><HEAD><TITLE>401\x20Unauthorized</TITLE></HEAD>\r\n<BOD
+SF:Y\x20BGCOLOR=\"#cc9999\"><H4>401\x20Unauthorized</H4>\r\nAuthorization\
+SF:x20required\.\r\n</BODY></HTML>\r\n\0")%r(HTTPOptions,138,"HTTP/1\.1\x2
+SF:0401\x20Unauthorized\r\nServer:\x20rak_mini_server\r\nWWW-Authenticate:
+SF:\x20Basic\x20realm=\"RAK\x20LOGIN\"\r\nContent-Length:\x20145\r\nConten
+SF:t-Type:\x20text/html\r\nConnection:\x20keep-alive\r\n\r\n<HTML><HEAD><T
+SF:ITLE>401\x20Unauthorized</TITLE></HEAD>\r\n<BODY\x20BGCOLOR=\"#cc9999\"
+SF:><H4>401\x20Unauthorized</H4>\r\nAuthorization\x20required\.\r\n</BODY>
+SF:</HTML>\r\n\0")%r(RTSPRequest,138,"HTTP/1\.1\x20401\x20Unauthorized\r\n
+SF:Server:\x20rak_mini_server\r\nWWW-Authenticate:\x20Basic\x20realm=\"RAK
+SF:\x20LOGIN\"\r\nContent-Length:\x20145\r\nContent-Type:\x20text/html\r\n
+SF:Connection:\x20keep-alive\r\n\r\n<HTML><HEAD><TITLE>401\x20Unauthorized
+SF:</TITLE></HEAD>\r\n<BODY\x20BGCOLOR=\"#cc9999\"><H4>401\x20Unauthorized
+SF:</H4>\r\nAuthorization\x20required\.\r\n</BODY></HTML>\r\n\0")%r(FourOh
+SF:FourRequest,138,"HTTP/1\.1\x20401\x20Unauthorized\r\nServer:\x20rak_min
+SF:i_server\r\nWWW-Authenticate:\x20Basic\x20realm=\"RAK\x20LOGIN\"\r\nCon
+SF:tent-Length:\x20145\r\nContent-Type:\x20text/html\r\nConnection:\x20kee
+SF:p-alive\r\n\r\n<HTML><HEAD><TITLE>401\x20Unauthorized</TITLE></HEAD>\r\
+SF:n<BODY\x20BGCOLOR=\"#cc9999\"><H4>401\x20Unauthorized</H4>\r\nAuthoriza
+SF:tion\x20required\.\r\n</BODY></HTML>\r\n\0")%r(GenericLines,148,"HTTP/1
+SF:\.1\x20400\x20Bad\x20Request\r\nServer:\x20rak_mini_server\r\nAccept-Ra
+SF:nges:\x20bytes\r\nContent-Type:\x20text/html\r\nContent-Length:\x20188\
+SF:r\nConnection:\x20close\r\n\r\n<html><head><title>400\x20Bad\x20Request
+SF:</title></head><body>\r\n<h1>Bad\x20Request</h1>\r\nYou\x20sent\x20a\x2
+SF:0request\x20that\x20the\x20server\x20couldn't\x20understand\.\r\n<hr>\r
+SF:\nGenerated\x20by\x20rak_mini_server\r\n</body></html>\r\n");
+MAC Address: 60:C5:A8:71:2F:D4 (Beijing LT Honway Technology)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 204.28 seconds
