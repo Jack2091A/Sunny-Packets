@@ -5,7 +5,7 @@
 This repository contains packet capture data (/data) along with various analysis scripts (/src) developed in order to carry out a cyber-risks assessment of commercial solar inverters
 The data was collected at UNSW Sydney by means of a custom testbed from which traffic traces of inverters could be captured. 
 
-## Repository Organisation
+## Organisation
 
 The general structure of this github repository is expressed indicatively as follows:
 
