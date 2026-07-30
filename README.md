@@ -47,26 +47,31 @@ Overarhing information and documentation can be found in the respective director
 | `data/Active/`   | Contains outputs from active network scanning tools for each inverter.    |
 | `data/Passive/`  | Contains PCAP captures collected during normal inverter operation.        |
 | `data/README.md` | Describes the structure and contents of the data directory.               |
-| `src/`           | Stores all datasets used by the project.                                  |
-| `SankeyMulti/`                | Script and Documentation. Generates Sankey diagrams showing packet flow between endpoints, protocols and ports.                    |
-| `Shannon/`                    | Script and Documentation. Calculates Shannon entropy for packet payload analysis.                                                  |
+| `src/`           | Stores all datasets used by the project.                          for packet payload analysis.                                                  |
 | `VulnerabilityLookupGrading/` | Script, .yaml config file and Documentation. Queries vulnerability databases and calculates vendor vulnerability scores.           |
-| `DataSovereignty/`            | Script, Data File (.mmdb) and Documentation. Determines communication destinations and assesses data sovereignty.                  |
+| `DataSovereignty/`            | Script, Data File (.mmdb) and Documentation. Determ         |
+| `SankeyMulti/`                | Script and Documentation. Generates Sankey diagrams showing packet flow between endpoints, protocols and ports.                    |
+| `Shannon/`                    | Script and Documentation. Calculates Shannon entropyines communication destinations and assesses data sovereignty.                  |
 | `ExposureScore/`              | Script and Documentation. Computes network exposure scores from discovered services and ports.                                     |
 | `Similarity/`                 | Script and Documentation. Compares packet structures and identifies repeated communication patterns.                               |
 
 
 ## Context
 
-SunnyPacket's code repository supports the passive analysis component of a study into solar inverter and DER communications. It assists in identifying:
+Sunny Packets supports research into the cybersecurity of commercial solar inverters and Distributed Energy Resources (DERs) by
+combining active network reconnaissance, passive traffic analysis and quantitative security assessment methodologies.
 
-- Local and remote communication flows
-- Protocol and port usage
-- Repeated packet structures
-- Behavioural similarity between captures
-- Entropy and variability in network traffic
-- Potential indicators of plaintext, structured, or encrypted communication
-- Analysing and scoring data , port exposure and manufacturer vulnerability
+The repository provides datasets, analysis tools and supporting documentation that enable researchers to:
+
+- Perform active network reconnaissance using industry-standard scanning tools.
+- Analyse passive packet captures collected during inverter operation.
+- Visualise communication flows between devices, protocols and services.
+- Identify repeated packet structures and behavioural communication patterns.
+- Quantify traffic randomness and predictability using Shannon entropy.
+- Assess device data sovereignty through IP geolocation.
+- Evaluate network exposure from TCP and UDP service discovery.
+- Measure historical vendor cybersecurity posture using vulnerability intelligence.
+- Produce repeatable and objective cybersecurity metrics for comparison between devices.
 
 
 ## Setup
