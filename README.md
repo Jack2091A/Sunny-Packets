@@ -153,27 +153,17 @@ python Similarity.py capture01.pcap IP_destination IP_source --packet-lengths X 
 Where X and Y are numbers indicative of the specific byte lengths of the packets in question. Z is a numerical flag case to treat packets of identical lengths but separate instances as being separate 
 from one another i.e. if there are two packets of length 153 back to back, Z = 2.
 
-## Running DataSovereignty.py
+### Data Sovereignty Scoring
 
-Run the script using the following command line structure:
+The tool assigns one of three possible scores.
 
-```text
-python dataSovereignty.py CaptureGood.pcap
-  --mac MAC_ADDR
-  --target-country LOCATION
-  --geoip-db GeoLite2-Country.mmdb
-  --csv sovereignty_report.csv
-```
-For example, given an identified mac address and if the inverters are located in Australia, the command line should be:
+| Score | Interpretation |
+|------:|----------------|
+| **100** | All observed public communications remain within the specified country. |
+| **50** | At least one overseas connection attempt was detected, but no successful overseas data exchange occurred. |
+| **0** | At least one successful overseas data transmission or exchange was detected. |
 
-```text
-python DataSovereignty.py CaptureGood.pcap
-  --mac 34:EA:E7:A6:AB:12
-  --target-country Australia
-  --geoip-db GeoLite2-Country.mmdb
-  --csv sovereignty_report.csv
-```
-The script will save the findings into a csv file containing the ip addresses found, their location and the ports used in communication.
+---
 
 ## Running VulnerabilityLookupGrading.py
 Initiate the run as using the following command line:
@@ -187,13 +177,5 @@ The weightings for this column can be found and modified in the grading_weights.
 After this has been completed, press enter and the script will complete its run. Note that the .xlsx file is generated once only (unless it is deleted) and future runs will prompt the user to
 change the already generated file.
 
-## Running ExposureScore.py
-
-Run the script on two .txt files containing the output of the NMAP scans completed;
-
-```text
-python ExposureScore.py tcp_scan.txt udp_scan.txt
-```
-The script will calculate and print a percentage score directly to the commandline.
 
 
