@@ -11,9 +11,9 @@ Each inverter has undergone the following selection of tests:
 The rationale is to capture the behaviour of the devices during normal operation. Each run
 is approximately 20 minutes apart from the previous run. Filters have been provided to isolate the behaviour of the device in particular.
 
-The captures are starting with their manufacturer. In the case of Sungrow, they are distinguished by their model names.
+The captures are named starting with their manufacturer. In the case of Sungrow, they are distinguished by their model names - SG5 and SH5.
 
-In some instances, the test was conducted twice. These pcaps end with the number 2. This was done to increase the volume of data using the standard
+In some instances, there may be two instances of the same test. These tests are separate and the pcaps are named as such, terminating with the number 2. This was done to increase the volume of data using the standard
 selection of tests.
 
 #### Sungrow SH5k-20
