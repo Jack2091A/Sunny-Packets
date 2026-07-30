@@ -6,7 +6,8 @@ It then calculates a percentage score using the following metric:
 
 $$
 TCP Score=max(0, 7.5 - 0.75\times(numberTCPportsExposed)
-
+$$
+$$
 UDP Score=max(0, 7.5 - 0.75\times(numberUDPportsExposed​)
 $$
 
