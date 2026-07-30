@@ -15,7 +15,6 @@ it is recommended to continually check for updates. The mmdb file in this direct
 - Differentiates between:
   - Connection attempts
   - Successful data exchange
-- Generates a detailed console report
 - Optional CSV export of all observed endpoints
 - Produces a Data Sovereignty Score out of 100
 
@@ -25,7 +24,7 @@ it is recommended to continually check for updates. The mmdb file in this direct
 Run the script using the following command line structure:
 
 ```text
-python dataSovereignty.py CaptureGood.pcap
+python DataSovereignty.py CaptureGood.pcap
   --mac MAC_ADDR
   --target-country LOCATION
   --geoip-db GeoLite2-Country.mmdb
