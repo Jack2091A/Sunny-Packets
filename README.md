@@ -35,7 +35,21 @@ Sunny-Packets/
        └── Similarity
 
 ```
-Note that script (/src) folders may contain additional configuration files if required.
+
+| Directory        | Contents                      | Purpose                                                                   |
+| ---------------- | ----------------------------- | ------------------------------------------------------------------------- |
+| `data/`          | Root data directory           | Stores all datasets used by the project.                                  |
+| `data/Active/`   | Active reconnaissance results | Contains outputs from active network enumeration tools for each inverter. |
+| `data/Passive/`  | Passive packet captures       | Contains PCAP captures collected during normal inverter operation.        |
+| `data/README.md` | Documentation                 | Describes the structure and contents of the data directory.               |
+| `src/`          | Root script directory          | Stores all datasets used by the project.                                  |
+| `SankeyMulti/`                | Generates Sankey diagrams showing packet flow between endpoints, protocols and ports. |
+| `Shannon/`                    | Calculates Shannon entropy for packet payload analysis.                               |
+| `VulnerabilityLookupGrading/` | Queries vulnerability databases and calculates vendor vulnerability scores.           |
+| `DataSovereignty/`            | Determines communication destinations and assesses data sovereignty.                  |
+| `ExposureScore/`              | Computes network exposure scores from discovered services and ports.                  |
+| `Similarity/`                 | Compares packet structures and identifies repeated communication patterns.            |
+
 
 ## Context
 
@@ -50,6 +64,8 @@ SunnyPacket's code repository supports the passive analysis component of a study
 - Analysing and scoring data , port exposure and manufacturer vulnerability
 
 ## What Is Included
+
+Additional information regarding each can be found in their respective README files located in the `/src` directory.
 
 ```text
 SankeyMulti.py
@@ -119,63 +135,3 @@ If this does not work, install the items manually using:
 ```text
 python -m pip install scapy pandas numpy matplotlib plotly kaleido geoip2 pycountry
 ```
-
-## Running SankeyMulti.py
-
-Generate a Sankey diagram from a single packet capture:
-```text
-python SankeyMulti.py \
-  --pcap Capture01.pcap \
-  --sankey-png output.pdf
-```
-Generate a Sankey diagram from multiple packet captures:
-```text
-python SankeyMulti.py \
-  --pcap Capture01.pcap \
-  --pcap Capture02.pcap \
-  --sankey-png combined_output.pdf
-```
-Example using MAC address labelling:
-```text
-python SankeyMulti.py \
-  --pcap Capture01.pcap \
-  --mac ac:19:9f:55:03:b4 \
-  --label "ac:19:9f:55:03:b4 Local Flow" \
-  --sankey-png local_flow.pdf
-```
-## Running Similarity.py
-
-```text
-python Similarity.py capture01.pcap IP_destination IP_source --packet-lengths X Y --context-window Z --show-groups  
- --list
-```
-
-Where X and Y are numbers indicative of the specific byte lengths of the packets in question. Z is a numerical flag case to treat packets of identical lengths but separate instances as being separate 
-from one another i.e. if there are two packets of length 153 back to back, Z = 2.
-
-### Data Sovereignty Scoring
-
-The tool assigns one of three possible scores.
-
-| Score | Interpretation |
-|------:|----------------|
-| **100** | All observed public communications remain within the specified country. |
-| **50** | At least one overseas connection attempt was detected, but no successful overseas data exchange occurred. |
-| **0** | At least one successful overseas data transmission or exchange was detected. |
-
----
-
-## Running VulnerabilityLookupGrading.py
-Initiate the run as using the following command line:
-
-```text
-python ExposureLookupGrading.py
-```
-Afterwards, the script will prompt the user to enter the name of the manufacturer in question. The script will then fetch NVD records, generate and populate an .xlsx file. It will then prompt the user to fill in the applicability column and save afterwards.
-The weightings for this column can be found and modified in the grading_weights.yaml file.
-
-After this has been completed, press enter and the script will complete its run. Note that the .xlsx file is generated once only (unless it is deleted) and future runs will prompt the user to
-change the already generated file.
-
-
-
