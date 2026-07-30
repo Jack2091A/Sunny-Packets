@@ -50,8 +50,6 @@ python SankeyMulti.py
 When port merging is enabled, ephemeral client ports are grouped into a single node:
 
 ```
-Device
-    ↓
 Device Port: *
 ```
 
